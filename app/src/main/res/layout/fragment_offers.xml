@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@android:color/black"
+    android:layout_height="match_parent">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_bg"
+        android:orientation="vertical">
+    <TextView
+        android:id="@+id/tvCompName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DinDinn"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:textSize="@dimen/_25ssp"
+        android:textStyle="bold"
+        android:gravity="bottom|center_horizontal"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:id="@+id/tvServiceType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delivery"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_20ssp"
+        android:textStyle="bold"
+        android:gravity="top|center_horizontal"
+        android:layout_centerHorizontal="true"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layoutDots"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_alignParentBottom="true"
+        android:visibility="visible"
+        android:background="@drawable/gradient_bg"
+        android:gravity="center"
+        android:orientation="horizontal"></LinearLayout>
+</RelativeLayout>

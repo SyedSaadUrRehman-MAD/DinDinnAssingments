@@ -1,0 +1,36 @@
+<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sliding_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    sothree:umanoOverlay="true"
+    sothree:umanoPanelHeight="@dimen/_155sdp"
+    sothree:umanoShadowHeight="@dimen/_4sdp">
+
+    <FrameLayout
+        android:id="@+id/offersFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_375sdp">
+
+        <fragment
+            android:id="@+id/offersFragment"
+            class="test.saad.dindinnminiassignment.assingmenttask.ui.OffersFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/_15sdp"
+        sothree:cardCornerRadius="@dimen/_25sdp">
+
+        <fragment
+            android:id="@+id/tabbedHomeFragment"
+            class="test.saad.dindinnminiassignment.assingmenttask.ui.TabbedHomeFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.cardview.widget.CardView>
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

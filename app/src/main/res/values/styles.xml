@@ -1,0 +1,24 @@
+<resources>
+
+    <style name="Widget.AppTheme.ButtonBar.Fullscreen" parent="">
+        <item name="android:background">@color/black_overlay</item>
+        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+    </style>
+
+    <style name="Tablayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="android:background">@color/white</item>
+        <item name="android:textColor">@color/inactive</item>
+        <item name="tabIndicatorColor">@android:color/transparent</item>
+        <item name="tabTextAppearance">@style/TabText</item>
+        <item name="colorControlNormal">@color/inactive</item>
+        <item name="android:textSize">@dimen/_22ssp</item>
+    </style>
+
+    <style name="TabText" parent="AppTheme.AppBarOverlay">
+        <item name="android:textSize">@dimen/_18ssp</item>
+        <item name="android:layout_margin">@dimen/_5sdp</item>
+        <item name="android:textColor">@color/textcolor_accent_inverse</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>
