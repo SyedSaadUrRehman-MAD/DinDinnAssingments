@@ -4,10 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import test.saad.dindinnminiassignment.R
 import test.saad.dindinnminiassignment.assingmenttask.ui.HomeActivity
+import java.lang.NumberFormatException
 
 class MainActivity : AppCompatActivity() {
     private val letters: String = "abcdefghijklmnopqrstuvwxyz"
@@ -30,18 +32,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun calOutput() {
-        val input = inputString.editText?.text!!.toString()
-        val steps = Integer.parseInt(inputSteps.editText?.text!!.toString())
-        for (i in 0..input.length - 1) {
-            val character = input[i]
-            val isCaps = character != character.toLowerCase()
-            val indexOfChar = letters.indexOf(character.toLowerCase())
-            if (steps < letters.length)
-                moveChar(indexOfChar, steps, isCaps)
-            else
-                moveChar(indexOfChar, steps % letters.length, isCaps)
+        try {
+            val input = inputString.editText?.text!!.toString()
+            val steps = Integer.parseInt(inputSteps.editText?.text!!.toString())
+            for (i in 0..input.length - 1) {
+                val character = input[i]
+                val isCaps = character != character.toLowerCase()
+                val indexOfChar = letters.indexOf(character.toLowerCase())
+                if (steps < letters.length)
+                    moveChar(indexOfChar, steps, isCaps)
+                else
+                    moveChar(indexOfChar, steps % letters.length, isCaps)
+            }
+            tvOutputDesc.text = outputLog + output + "\n" + outLog
+        }catch (e:NumberFormatException)
+        {
+            Toast.makeText(this,"Incorrect input",Toast.LENGTH_LONG).show()
         }
-        tvOutputDesc.text = outputLog + output + "\n" + outLog
     }
 
     private fun moveChar(indexOfChar: Int, steps: Int, isCaps: Boolean) {
